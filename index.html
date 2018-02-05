@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Socket.io chat client</title>
+    <style>
+        .chat {
+            border: 4px solid black;
+            padding: 20px;
+        }
+
+        .chat__messages {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .chat__interface {
+
+        }
+
+        .message-form {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input {
+            box-sizing: content-box;
+            height: 30px;
+            padding: 10px;
+        }
+
+        #message-form #username {
+            flex:1;
+        }
+
+        #message-form #message {
+            flex:4;
+        }
+
+        #message-form input[type='submit'] {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat">
+        <ul class="chat__messages"></ul>
+        <div class="chat__interface">
+            <form action="#" id="message-form">
+                <input type="text" name="username" id="username" placeholder="Guest">
+                <input type="text" name="message" id="message" placeholder="Type here to chat">
+                <input type="submit" value="Send">
+            </form>
+        </div>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.17/socket.io.min.js"></script>
+<script src="Client.js"></script>
+<script src="UserInterface.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
