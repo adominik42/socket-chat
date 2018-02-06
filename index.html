@@ -13,11 +13,8 @@
 
         .chat__messages {
             height: 300px;
+            list-style: none;
             overflow: hidden;
-        }
-
-        .chat__interface {
-
         }
 
         .message-form {
@@ -42,6 +39,10 @@
         #message-form input[type='submit'] {
             flex: 1;
         }
+
+        .sent {
+            text-align: right;
+        }
     </style>
 </head>
 <body>
@@ -58,7 +59,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.17/socket.io.min.js"></script>
 <script src="Client.js"></script>
-<script src="UserInterface.js"></script>
-<script src="app.js"></script>
+<script src="App.js"></script>
 </body>
 </html>

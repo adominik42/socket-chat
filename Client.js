@@ -1,18 +1,10 @@
 class Client {
     constructor(serverLocation) {
-        if (!this.checkSocketIoExistence()) return false;
-
         this.socket = null;
-        this.message = null;
-        this.user = null;
 
         this.host = serverLocation;
         this.connectToServer();
-        this.handleIncomingMessage();
-    }
-
-    checkSocketIoExistence() {
-        return typeof io != "undefined";
+        this.messageReceived();
     }
 
     connectToServer() {
@@ -22,16 +14,17 @@ class Client {
         });
     }
 
-    handleIncomingMessage() {
-        this.socket.on('message', messageBody => {
-            let list = document.querySelector(".chat__messages");
-            let entry = document.createElement("li");
-            entry.appendChild(document.createTextNode(messageBody.user + ": " + messageBody.message));
-            list.appendChild(entry);
+    messageReceived() {
+        this.socket.on("message", message => {
+            this.handleIncomingMessage(message);
         });
     }
 
-    sendMessage() {
-        this.socket.emit("message", {user:this.user, message:this.message});
+    handleIncomingMessage(messageData) {
+        console.log(messageData);
+    }
+
+    sendMessage(user, message) {
+        this.socket.emit("message", {user:user, message:message});
     }
 }
