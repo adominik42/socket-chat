@@ -17,6 +17,8 @@ class App extends Client {
             let user = this.rootElement.querySelector("#username").value;
             let message = this.rootElement.querySelector("#message").value;
 
+            if (user.trim().length == 0 || message.trim().length == 0) return;
+
             this.sendMessage(user, message);
             this.renderMessage(message);
         }, false);

@@ -29,15 +29,15 @@
         }
 
         #message-form #username {
-            flex:1;
+            flex: 15%;
         }
 
         #message-form #message {
-            flex:4;
+            flex: 70%
         }
 
         #message-form input[type='submit'] {
-            flex: 1;
+            flex: 15%;
         }
 
         .sent {
@@ -49,7 +49,7 @@
     <div class="chat">
         <ul class="chat__messages"></ul>
         <div class="chat__interface">
-            <form action="#" id="message-form">
+            <form action="#" id="message-form" class='message-form'>
                 <input type="text" name="username" id="username" placeholder="Guest">
                 <input type="text" name="message" id="message" placeholder="Type here to chat">
                 <input type="submit" value="Send">
